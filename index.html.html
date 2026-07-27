@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excellence English Academy — Nazar ElHaj | Grades 1–11</title>
+<meta name="description" content="Excellence English Academy with Nazar ElHaj — English grammar and language mastery for Grades 1–11. Lessons, videos, audio, exam papers and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233F;
+    --board:#2B4736;
+    --board-dark:#1E3527;
+    --paper:#F7F6F1;
+    --paper-alt:#EFEDE3;
+    --kraft:#C79A56;
+    --kraft-dark:#A87D3F;
+    --red:#B23A2E;
+    --line:#DAD6C8;
+    --white:#FFFDF9;
+    --shadow: 0 10px 30px rgba(22,35,63,0.12);
+    --radius: 4px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    margin:0 0 0.5em;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+  :focus-visible{
+    outline:3px solid var(--red);
+    outline-offset:3px;
+  }
+
+  /* ---------- Ruled paper texture used as section backdrop ---------- */
+  .ruled{
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 35px,
+      var(--line) 35px,
+      var(--line) 36px
+    );
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:var(--paper);
+    border-bottom:2px solid var(--ink);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 24px;
+    max-width:1120px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .brand-word{
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+  }
+  .brand-word strong{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+  .brand-word span{
+    font-family:'Space Mono',monospace;
+    font-size:0.62rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--board);
+  }
+  nav.primary ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+    margin:0;
+    padding:0;
+  }
+  nav.primary a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.92rem;
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav.primary a::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:2px;
+    background:var(--red);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 0.2s ease;
+  }
+  nav.primary a:hover::after, nav.primary a:focus-visible::after{transform:scaleX(1);}
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:2px solid var(--ink);
+    border-radius:var(--radius);
+    padding:8px 10px;
+    cursor:pointer;
+    font-family:'Space Mono',monospace;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--board);
+    color:var(--white);
+    padding:88px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(var(--board-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--board-dark) 1px, transparent 1px);
+    background-size:42px 42px;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+  .hero-inner{animation:fadeUp 0.8s ease both;}
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---------------- Scroll-reveal ---------------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  .hero-inner{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--kraft);
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.6vw, 3.6rem);
+    color:var(--white);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--kraft);
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    max-width:46ch;
+    color:#E7EFE8;
+    margin-bottom:28px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border-radius:var(--radius);
+    font-weight:700;
+    font-size:0.95rem;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    font-family:'Inter',sans-serif;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--red); color:var(--white);}
+  .btn-primary:hover{box-shadow:0 8px 18px rgba(178,58,46,0.4);}
+  .btn-outline{background:transparent; border-color:var(--white); color:var(--white);}
+  .btn-outline:hover{background:rgba(255,255,255,0.08);}
+  .btn-dark{background:var(--ink); color:var(--white);}
+  .btn-dark:hover{box-shadow:0 8px 18px rgba(22,35,63,0.35);}
+
+  /* Signature element: the Grade Ruler */
+  .ruler-card{
+    position:relative;
+    background:var(--white);
+    color:var(--ink);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:26px 20px 20px;
+  }
+  .ruler-card h2{
+    font-size:1rem;
+    font-family:'Space Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--board);
+    margin-bottom:18px;
+  }
+  .ruler{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    border-bottom:3px solid var(--ink);
+    padding-bottom:0;
+    margin-bottom:8px;
+  }
+  .ruler button{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:'Space Mono',monospace;
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    padding:0 2px 10px;
+    flex:1;
+  }
+  .ruler button .tick{
+    width:2px;
+    height:14px;
+    background:var(--ink);
+  }
+  .ruler button .num{font-size:0.78rem;}
+  .ruler button[aria-pressed="true"] .tick{
+    background:var(--red);
+    height:22px;
+    width:3px;
+  }
+  .ruler button[aria-pressed="true"] .num{color:var(--red); font-weight:700;}
+  .ruler button:hover .tick{background:var(--kraft-dark);}
+  .ruler-caption{
+    font-size:0.85rem;
+    color:#4A5568;
+    min-height:2.6em;
+  }
+  .ruler-caption strong{color:var(--ink);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:80px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 auto 44px;
+    text-align:center;
+  }
+  .section-head .eyebrow{color:var(--red);}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem); color:var(--ink);}
+  .section-head p{color:#4A5568; font-size:1.02rem;}
+
+  /* ---------- About / services ---------- */
+  .about{background:var(--white); border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--board);
+    padding:28px;
+    border-radius:var(--radius);
+  }
+  .about-card p{margin:0 0 14px; color:#33415A;}
+  .about-card p:last-child{margin-bottom:0;}
+  .service-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    gap:18px;
+  }
+  .service-list li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:16px;
+    align-items:start;
+    padding:18px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+  }
+  .service-list .icon{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:var(--board);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .service-list h3{font-size:1.02rem; margin-bottom:4px;}
+  .service-list p{margin:0; font-size:0.92rem; color:#4A5568;}
+
+  /* ---------- Grades ---------- */
+  .grades{background:var(--paper-alt);}
+  .grade-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:14px;
+  }
+  .grade-chip{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 14px;
+    text-align:left;
+    cursor:pointer;
+    transition:border-color 0.15s ease, transform 0.15s ease;
+  }
+  .grade-chip:hover{transform:translateY(-3px); border-color:var(--kraft-dark);}
+  .grade-chip.is-active{border-color:var(--red); box-shadow:0 0 0 1px var(--red) inset;}
+  .grade-chip .g-num{
+    font-family:'Space Mono',monospace;
+    font-size:0.7rem;
+    color:var(--red);
+    letter-spacing:0.08em;
+  }
+  .grade-chip .g-title{font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; margin:4px 0 6px;}
+  .grade-chip .g-desc{font-size:0.84rem; color:#4A5568; margin:0;}
+
+  /* ---------- Library (folder tabs) ---------- */
+  .library{background:var(--white); border-top:2px solid var(--ink);}
+  .tabs{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-bottom:0;
+    position:relative;
+    z-index:2;
+  }
+  .tab-btn{
+    font-family:'Space Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+    border-bottom:none;
+    padding:12px 18px;
+    border-radius:8px 8px 0 0;
+    cursor:pointer;
+    color:#4A5568;
+    position:relative;
+    top:1px;
+  }
+  .tab-btn.is-active{
+    background:var(--kraft);
+    color:var(--white);
+    border-color:var(--kraft-dark);
+  }
+  .tab-panel-wrap{
+    border:1px solid var(--line);
+    border-radius:0 8px 8px 8px;
+    padding:28px;
+    background:var(--paper-alt);
+  }
+  .filter-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .filter-row label{font-size:0.85rem; font-weight:600;}
+  .filter-row select{
+    font-family:'Inter',sans-serif;
+    padding:8px 12px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--white);
+  }
+  .tab-panel-wrap[data-type="image"]{
+    background:
+      radial-gradient(ellipse at top left, rgba(199,154,86,0.10), transparent 55%),
+      repeating-linear-gradient(135deg, rgba(22,35,63,0.035) 0 2px, transparent 2px 26px),
+      #E9E5D8;
+  }
+
+  /* ---- shared grid ---- */
+  .resource-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:20px;
+  }
+  .resource-grid.type-image{
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    align-items:end;
+  }
+
+  /* ---- poster card: video ---- */
+  .poster-card{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+    background:var(--ink);
+    aspect-ratio:16/10;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(22,35,63,0.18);
+    transition:transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease;
+  }
+  .poster-card:hover, .poster-card:focus-within{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 22px 40px rgba(22,35,63,0.32);
+    z-index:2;
+  }
+  .poster-art{
+    position:absolute; inset:0;
+    background-size:cover;
+    background-position:center;
+  }
+  .poster-art img{width:100%; height:100%; object-fit:cover; display:block;}
+  .poster-badge{
+    position:absolute;
+    top:10px; left:10px;
+    font-family:'Space Mono',monospace;
+    font-size:0.64rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    background:rgba(16,20,15,0.55);
+    color:var(--white);
+    padding:4px 8px;
+    border-radius:3px;
+    backdrop-filter:blur(2px);
+  }
+  .poster-play{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .poster-play span{
+    width:52px; height:52px;
+    border-radius:50%;
+    background:rgba(255,253,249,0.92);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,0.35);
+    transition:transform 0.3s ease, background 0.3s ease;
+  }
+  .poster-card:hover .poster-play span{transform:scale(1.12); background:var(--red);}
+  .poster-card:hover .poster-play svg path{fill:var(--white);}
+  .poster-overlay{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding:14px 14px 12px;
+    background:linear-gradient(to top, rgba(10,15,12,0.92) 10%, rgba(10,15,12,0.55) 60%, transparent 100%);
+    color:var(--white);
+    transform:translateY(56%);
+    transition:transform 0.35s cubic-bezier(.2,.8,.2,1);
+  }
+  .poster-card:hover .poster-overlay, .poster-card:focus-within .poster-overlay{transform:translateY(0);}
+  .poster-overlay h4{font-family:'Fraunces',serif; font-size:0.98rem; margin:0 0 3px; color:var(--white);}
+  .poster-overlay .meta{font-size:0.76rem; color:#D7DCE6; display:block; margin-bottom:8px;}
+  .poster-overlay .dl{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:0.8rem; font-weight:700;
+    text-decoration:none; color:var(--kraft);
+  }
+  .poster-overlay .dl:hover{color:var(--white);}
+
+  /* ---- gallery-wall card: photos ---- */
+  .frame-card{
+    background:var(--white);
+    padding:10px 10px 44px;
+    box-shadow:0 10px 24px rgba(22,35,63,0.16), 0 2px 0 rgba(255,255,255,0.6) inset;
+    position:relative;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .frame-card:nth-child(3n+1){transform:rotate(-1.4deg);}
+  .frame-card:nth-child(3n+2){transform:rotate(1deg);}
+  .frame-card:nth-child(3n){transform:rotate(-0.6deg);}
+  .frame-card:hover{
+    transform:rotate(0deg) translateY(-6px) scale(1.03);
+    box-shadow:0 20px 34px rgba(22,35,63,0.28);
+    z-index:2;
+  }
+  .frame-art{
+    aspect-ratio:4/5;
+    overflow:hidden;
+    background-size:cover;
+    background-position:center;
+  }
+  .frame-art img{width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease;}
+  .frame-card:hover .frame-art img, .frame-card:hover .frame-art{transform:scale(1.06);}
+  .frame-caption{
+    position:absolute;
+    left:10px; right:10px; bottom:10px;
+    text-align:center;
+  }
+  .frame-caption h4{font-family:'Fraunces',serif; font-size:0.86rem; margin:0 0 2px;}
+  .frame-caption .meta{font-size:0.7rem; color:#4A5568;}
+  .frame-card .dl{
+    position:absolute;
+    top:16px; right:16px;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transform:translateY(-6px);
+    transition:opacity 0.25s ease, transform 0.25s ease;
+  }
+  .frame-card:hover .dl{opacity:1; transform:translateY(0);}
+  .frame-card .dl svg path{stroke:var(--white);}
+
+  /* ---- list card: audio / pdf ---- */
+  .resource-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .resource-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 26px rgba(22,35,63,0.14);
+    border-color:var(--kraft-dark);
+  }
+  .resource-card .kind{
+    font-family:'Space Mono',monospace;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--board);
+  }
+  .resource-card h4{font-family:'Fraunces',serif; font-size:1.02rem; margin:0;}
+  .resource-card .meta{font-size:0.8rem; color:#4A5568;}
+  .resource-card .waveform{
+    display:flex; align-items:flex-end; gap:2px; height:26px;
+  }
+  .resource-card .waveform span{
+    flex:1; background:var(--board); opacity:0.55; border-radius:1px;
+  }
+  .resource-card:hover .waveform span{opacity:1; background:var(--red);}
+  .resource-card .dl{
+    margin-top:auto;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--red);
+  }
+  .resource-card .dl:hover{text-decoration:underline;}
+  .empty-note{
+    grid-column:1/-1;
+    padding:26px;
+    text-align:center;
+    color:#4A5568;
+    font-size:0.92rem;
+    background:var(--white);
+    border:1px dashed var(--line);
+    border-radius:var(--radius);
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--ink); color:var(--white);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:48px;
+  }
+  .contact-info h2{color:var(--white);}
+  .contact-info p{color:#C9D2E3;}
+  .social-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:22px;
+  }
+  .social-row a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:42px; height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    text-decoration:none;
+  }
+  .social-row a:hover{background:var(--red); border-color:var(--red);}
+
+  .index-card{
+    background:var(--white);
+    color:var(--ink);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:32px;
+    position:relative;
+  }
+  .index-card::before{
+    content:"";
+    position:absolute;
+    top:56px; left:0; right:0;
+    height:1px;
+    background:var(--line);
+    box-shadow:0 30px 0 var(--line), 0 60px 0 var(--line), 0 90px 0 var(--line), 0 120px 0 var(--line);
+    pointer-events:none;
+    z-index:0;
+  }
+  .index-card form{position:relative; z-index:1;}
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--board);
+    margin-bottom:6px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;
+    border:none;
+    border-bottom:2px solid var(--line);
+    background:transparent;
+    padding:8px 2px;
+    font-family:'Inter',sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;
+    border-bottom-color:var(--red);
+  }
+  .field textarea{resize:vertical; min-height:90px;}
+  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .form-msg{
+    margin-top:14px;
+    font-size:0.88rem;
+    display:none;
+  }
+  .form-msg.show{display:block;}
+  .form-msg.ok{color:var(--board);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--board-dark);
+    color:#C9D2C7;
+    padding:28px 0;
+    font-size:0.85rem;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer a{text-decoration:none; color:#E7EFE8;}
+  footer a:hover{text-decoration:underline;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;}
+    .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .row-2{grid-template-columns:1fr;}
+    nav.primary{
+      position:fixed;
+      top:64px; left:0; right:0;
+      background:var(--paper);
+      border-bottom:2px solid var(--ink);
+      display:none;
+      padding:14px 24px 22px;
+    }
+    nav.primary.is-open{display:block;}
+    nav.primary ul{flex-direction:column; gap:16px;}
+    .nav-toggle{display:inline-flex; align-items:center; gap:6px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <!-- Inline SVG wordmark logo: open book + rising bar, no external image needed -->
+      <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="42" height="42" rx="6" fill="#2B4736"/>
+        <path d="M8 13.5C8 12.6716 8.67157 12 9.5 12H19V30H9.5C8.67157 30 8 29.3284 8 28.5V13.5Z" stroke="#F7F6F1" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M34 13.5C34 12.6716 33.3284 12 32.5 12H23V30H32.5C33.3284 30 34 29.3284 34 28.5V13.5Z" stroke="#F7F6F1" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M19 14.5C16.5 13.3 12.5 13 10 13.6" stroke="#C79A56" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M23 14.5C25.5 13.3 29.5 13 32 13.6" stroke="#C79A56" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M19 19C16.5 17.8 12.5 17.5 10 18.1" stroke="#C79A56" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M23 19C25.5 17.8 29.5 17.5 32 18.1" stroke="#C79A56" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-word">
+        <strong>Excellence English Academy</strong>
+        <span>Nazar ElHaj &middot; Grades 1&ndash;11</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+      <span class="mono">Menu</span>
+    </button>
+    <nav class="primary" id="primaryNav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#grades">Grades</a></li>
+        <li><a href="#library">Resource library</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="eyebrow">English Language Academy · Grades 1&ndash;11</p>
+        <h1>Grammar and language taught the way it should be &mdash; <em>clearly, patiently, one grade at a time.</em></h1>
+        <p class="lede">Excellence English Academy is led by Nazar ElHaj, using the SMILE Series curriculum to build real reading, writing and grammar skills from Grade 1 through Grade 11 &mdash; in class, on video, and at home.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Leave a message</a>
+          <a class="btn btn-outline" href="#library">Browse the resource library</a>
+        </div>
+      </div>
+      <div class="ruler-card">
+        <h2>Find your grade</h2>
+        <div class="ruler" id="gradeRuler" role="group" aria-label="Select a grade, 1 to 11"></div>
+        <p class="ruler-caption" id="rulerCaption">Tap a number to see what that grade focuses on this year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow mono">About the academy</p>
+        <h2>What Excellence English Academy is producing</h2>
+        <p>One teacher, one curriculum, one clear path from a child's first sentence to exam-ready fluency.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <p><strong>Nazar ElHaj</strong> teaches English grammar and language skills to students in Grades 1&ndash;11, using the <strong>SMILE Series</strong> as the core curriculum.</p>
+          <p>Lessons are shared across WhatsApp, TikTok, YouTube, Telegram and Instagram, so students can review class material, watch explanations again, and practice between sessions &mdash; not just during them.</p>
+          <p>This website brings all of that together in one place: what each grade covers, and every video, audio lesson, worksheet image and exam paper available to download.</p>
+        </div>
+        <ul class="service-list">
+          <li>
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v14H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h13" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <h3>Grade-by-grade grammar</h3>
+              <p>A structured path through grammar and language skills for every grade from 1 to 11, built on the SMILE Series.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <h3>Video lessons</h3>
+              <p>Recorded explanations students can rewatch and download, matched to the grade and topic they need.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm7-3a7 7 0 0 1-14 0M12 19v3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <h3>Audio lessons</h3>
+              <p>Listening and pronunciation practice as downloadable audio, for study on the go.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 3v5h5M6 3h8l6 6v12H6V3Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <h3>Worksheets, images &amp; exam papers</h3>
+              <p>Printable pages, reference images and past exams, ready to download and use for revision.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GRADES ============ -->
+  <section class="grades ruled" id="grades">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow mono">Curriculum</p>
+        <h2>Grades 1 through 11</h2>
+        <p>Every grade builds on the last. Choose a grade to see its focus, then find matching material in the library below.</p>
+      </div>
+      <div class="grade-grid" id="gradeGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ LIBRARY ============ -->
+  <section class="library" id="library">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow mono">Resource library</p>
+        <h2>Videos, audio, images &amp; PDFs</h2>
+        <p>Everything here is free to download. Filter by grade to find what matches your class.</p>
+      </div>
+
+      <div class="tabs" id="libraryTabs" role="tablist" aria-label="Resource type">
+        <button class="tab-btn is-active" role="tab" aria-selected="true" data-type="video">Videos</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-type="audio">Audio</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-type="image">Photos</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-type="pdf">PDFs &amp; Exams</button>
+      </div>
+
+      <div class="tab-panel-wrap">
+        <div class="filter-row">
+          <label for="gradeFilter">Filter by grade</label>
+          <select id="gradeFilter">
+            <option value="all">All grades</option>
+          </select>
+        </div>
+        <div class="resource-grid" id="resourceGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow mono" style="color:#C79A56;">Get in touch</p>
+        <h2>Leave a message</h2>
+        <p>Questions about a grade, a lesson, or joining a class &mdash; send a message and Nazar ElHaj will get back to you. You can also reach the academy directly on any of these:</p>
+        <div class="social-row">
+          <a href="#" aria-label="WhatsApp" title="WhatsApp — add your link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" stroke="#fff" stroke-width="1.5"/><path d="M8.5 8.7c.2-.5.4-.5.7-.5h.6c.2 0 .4 0 .6.5.2.5.7 1.7.7 1.8.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.2.4 1 1.5 2.1 2.1.3.2.5.1.7-.1.2-.2.7-.8.9-1.1.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4.1.5-.1 1.3-.5 1.7-.4.4-1.1.7-1.9.6-1.9-.2-4-1.6-5.4-3.5-.5-.6-1-1.4-1-2.3 0-.7.3-1.3.7-1.9Z" fill="#fff"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" title="TikTok — add your link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a2.5 2.5 0 1 1-2-2.45V9a4.5 4.5 0 1 0 4.5 4.5V8.2a6 6 0 0 0 3.5 1.1V7.2A4 4 0 0 1 16.5 3H14Z" fill="#fff"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" title="YouTube — add your link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 8.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.4 5.1 12 5.1 12 5.1s-3.4 0-6.1.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2.8 9.8 2.8 11.5v1c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.8.8 1.9.8 2.3.9 1.7.2 6.9.2 6.9.2s3.4 0 6.1-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1c0-1.7-.2-3.3-.2-3.3Z" stroke="#fff" stroke-width="1.3"/><path d="M10 14.6V9.4l4.6 2.6-4.6 2.6Z" fill="#fff"/></svg>
+          </a>
+          <a href="#" aria-label="Telegram" title="Telegram — add your link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 4 3 11.3l5 1.7m13-9L17 20l-6-4.3M8 13l9-7.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" title="Instagram — add your link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" stroke="#fff" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="#fff"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="index-card">
+        <!--
+          This form posts to FormSubmit so messages arrive by email — no backend needed.
+          Replace YOUR-EMAIL@example.com below with the academy's real inbox, then
+          confirm the activation email FormSubmit sends the first time it receives a message.
+        -->
+        <form id="contactForm" action="https://formsubmit.co/YOUR-EMAIL@example.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from the Excellence English Academy website">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="row-2">
+            <div class="field">
+              <label for="fName">Name</label>
+              <input type="text" id="fName" name="Name" required>
+            </div>
+            <div class="field">
+              <label for="fGrade">Student's grade</label>
+              <select id="fGrade" name="Grade">
+                <option value="">Select a grade</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fEmail">Email or phone</label>
+            <input type="text" id="fEmail" name="Contact" required>
+          </div>
+          <div class="field">
+            <label for="fMsg">Message</label>
+            <textarea id="fMsg" name="Message" required></textarea>
+          </div>
+          <button class="btn btn-dark" type="submit">Send message</button>
+          <p class="form-msg" id="formMsg">Thank you — your message has been sent.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>&copy; <span id="year"></span> Excellence English Academy &mdash; Nazar ElHaj. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------------- Mobile nav ---------------- */
+  var navToggle = document.getElementById('navToggle');
+  var primaryNav = document.getElementById('primaryNav');
+  navToggle.addEventListener('click', function(){
+    var open = primaryNav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  primaryNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      primaryNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------------- Grade data ----------------
+     Edit this list to match your real syllabus per grade. */
+  var GRADES = [
+    {n:1,  title:"Grade 1",  desc:"Letters, sounds, and first sight words."},
+    {n:2,  title:"Grade 2",  desc:"Simple sentences and everyday vocabulary."},
+    {n:3,  title:"Grade 3",  desc:"Nouns, verbs and building longer sentences."},
+    {n:4,  title:"Grade 4",  desc:"Tenses, adjectives and short paragraph writing."},
+    {n:5,  title:"Grade 5",  desc:"Reading comprehension and grammar in context."},
+    {n:6,  title:"Grade 6",  desc:"Clauses, punctuation and structured paragraphs."},
+    {n:7,  title:"Grade 7",  desc:"Reported speech, tenses in depth, essay basics."},
+    {n:8,  title:"Grade 8",  desc:"Advanced grammar and formal writing skills."},
+    {n:9,  title:"Grade 9",  desc:"SMILE Series grammar core and exam technique."},
+    {n:10, title:"Grade 10", desc:"SMILE Series continued, extended composition."},
+    {n:11, title:"Grade 11", desc:"Exam-focused grammar review and full practice papers."}
+  ];
+
+  /* ---------------- Resource data ----------------
+     This is the whole media library. To publish real files:
+       1. In your GitHub repo, add folders like /assets/videos, /assets/audio,
+          /assets/images, /assets/pdfs and upload your files there.
+       2. Add one entry below per file, pointing "file" at that path.
+     Everything here is example data — replace it with your real lessons. */
+  var RESOURCES = [
+    {type:"video", grade:9,  title:"Present Perfect vs Past Simple", meta:"12:04 · MP4", file:"assets/videos/grade9-present-perfect.mp4", thumb:"assets/videos/grade9-present-perfect.jpg"},
+    {type:"video", grade:11, title:"Full Grammar Exam Walkthrough",  meta:"28:40 · MP4", file:"assets/videos/grade11-exam-walkthrough.mp4", thumb:"assets/videos/grade11-exam-walkthrough.jpg"},
+    {type:"video", grade:6,  title:"Punctuation Basics",             meta:"9:15 · MP4",  file:"assets/videos/grade6-punctuation.mp4", thumb:"assets/videos/grade6-punctuation.jpg"},
+    {type:"audio", grade:3,  title:"Everyday Vocabulary — Listening", meta:"6:20 · MP3", file:"assets/audio/grade3-vocabulary.mp3"},
+    {type:"audio", grade:8,  title:"Pronunciation: Word Stress",      meta:"8:05 · MP3", file:"assets/audio/grade8-word-stress.mp3"},
+    {type:"image", grade:2,  title:"Sight Words Poster",              meta:"JPG",        file:"assets/images/grade2-sight-words.jpg"},
+    {type:"image", grade:7,  title:"Tenses Reference Chart",          meta:"PNG",        file:"assets/images/grade7-tenses-chart.png"},
+    {type:"pdf",   grade:9,  title:"SMILE Series — Unit 3 Worksheet", meta:"PDF",        file:"assets/pdfs/grade9-unit3-worksheet.pdf"},
+    {type:"pdf",   grade:10, title:"Mid-Term Practice Exam",          meta:"PDF",        file:"assets/pdfs/grade10-midterm-exam.pdf"},
+    {type:"pdf",   grade:11, title:"Final Exam — Past Paper",         meta:"PDF",        file:"assets/pdfs/grade11-final-past-paper.pdf"}
+  ];
+
+  var TYPE_LABEL = {video:"Video", audio:"Audio", image:"Photo", pdf:"PDF"};
+
+  /* Duotone palettes cycled for poster/frame placeholder art (used only
+     until a real thumbnail/photo file is supplied) */
+  var PALETTES = [
+    ["#2B4736","#16233F"],
+    ["#16233F","#B23A2E"],
+    ["#A87D3F","#16233F"],
+    ["#2B4736","#A87D3F"],
+    ["#B23A2E","#1E3527"]
+  ];
+  function paletteFor(i){
+    var p = PALETTES[i % PALETTES.length];
+    return "linear-gradient(155deg,"+p[0]+" 0%,"+p[1]+" 100%)";
+  }
+  var PLAY_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6.5v11l9-5.5-9-5.5Z" fill="#16233F"/></svg>';
+  var DL_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" stroke="#B23A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var DL_ICON_WHITE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  /* ---------------- Build grade ruler (hero) ---------------- */
+  var ruler = document.getElementById('gradeRuler');
+  var rulerCaption = document.getElementById('rulerCaption');
+  GRADES.forEach(function(g){
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.innerHTML = '<span class="tick"></span><span class="num">'+g.n+'</span>';
+    btn.addEventListener('click', function(){
+      ruler.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      rulerCaption.innerHTML = '<strong>Grade '+g.n+':</strong> '+g.desc;
+      setActiveGrade(g.n);
+      document.getElementById('grades').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    ruler.appendChild(btn);
+  });
+
+  /* ---------------- Build grade grid ---------------- */
+  var gradeGrid = document.getElementById('gradeGrid');
+  var gradeChips = {};
+  GRADES.forEach(function(g){
+    var card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'grade-chip';
+    card.innerHTML =
+      '<div class="g-num mono">GRADE '+g.n+'</div>'+
+      '<div class="g-title">'+g.title+'</div>'+
+      '<p class="g-desc">'+g.desc+'</p>';
+    card.addEventListener('click', function(){
+      setActiveGrade(g.n);
+      gradeFilter.value = String(g.n);
+      renderResources();
+      document.getElementById('library').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    gradeGrid.appendChild(card);
+    gradeChips[g.n] = card;
+  });
+
+  function setActiveGrade(n){
+    Object.keys(gradeChips).forEach(function(k){
+      gradeChips[k].classList.toggle('is-active', Number(k) === n);
+    });
+  }
+
+  /* ---------------- Grade filter dropdowns (library + contact form) ---------------- */
+  var gradeFilter = document.getElementById('gradeFilter');
+  var formGradeSelect = document.getElementById('fGrade');
+  GRADES.forEach(function(g){
+    var o1 = document.createElement('option');
+    o1.value = String(g.n); o1.textContent = g.title;
+    gradeFilter.appendChild(o1);
+
+    var o2 = document.createElement('option');
+    o2.value = g.title; o2.textContent = g.title;
+    formGradeSelect.appendChild(o2);
+  });
+  gradeFilter.addEventListener('change', renderResources);
+
+  /* ---------------- Library tabs ---------------- */
+  var activeType = 'video';
+  var tabButtons = document.querySelectorAll('#libraryTabs .tab-btn');
+  tabButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabButtons.forEach(function(b){
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected','false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected','true');
+      activeType = btn.dataset.type;
+      renderResources();
+    });
+  });
+
+  function artFor(i, thumb, tag){
+    // Renders a real thumbnail if one is supplied; falls back to a
+    // generated duotone placeholder (with a faint grade watermark)
+    // so the gallery still looks finished before real files exist.
+    if(thumb){
+      return '<img src="'+thumb+'" alt="" loading="lazy" onerror="this.parentElement.style.backgroundImage=\''+paletteFor(i).replace(/'/g,"\\'")+'\'; this.remove();">';
+    }
+    return '';
+  }
+
+  function renderResources(){
+    var grid = document.getElementById('resourceGrid');
+    var wrap = document.querySelector('.tab-panel-wrap');
+    wrap.setAttribute('data-type', activeType);
+    grid.className = 'resource-grid' + (activeType === 'image' ? ' type-image' : '');
+    grid.innerHTML = '';
+    var gradeVal = gradeFilter.value;
+    var items = RESOURCES.filter(function(r){
+      if(r.type !== activeType) return false;
+      if(gradeVal !== 'all' && String(r.grade) !== gradeVal) return false;
+      return true;
+    });
+
+    if(items.length === 0){
+      var empty = document.createElement('div');
+      empty.className = 'empty-note';
+      empty.textContent = 'No ' + TYPE_LABEL[activeType].toLowerCase() + ' files for this grade yet. Add them to the RESOURCES list in the code, or choose "All grades".';
+      grid.appendChild(empty);
+      return;
+    }
+
+    items.forEach(function(r, i){
+      var card = document.createElement('div');
+
+      if(r.type === 'video'){
+        card.className = 'poster-card reveal is-visible';
+        card.innerHTML =
+          '<div class="poster-art" style="background-image:'+(r.thumb ? 'none' : paletteFor(i))+'">'+ artFor(i, r.thumb) +'</div>'+
+          '<span class="poster-badge mono">Grade '+r.grade+'</span>'+
+          '<a class="poster-play" href="'+r.file+'" download aria-label="Download '+r.title+'"><span>'+PLAY_ICON+'</span></a>'+
+          '<div class="poster-overlay">'+
+            '<h4>'+r.title+'</h4>'+
+            '<span class="meta">'+r.meta+'</span>'+
+            '<a class="dl" href="'+r.file+'" download>'+DL_ICON+' Download</a>'+
+          '</div>';
+      } else if(r.type === 'image'){
+        card.className = 'frame-card reveal is-visible';
+        card.innerHTML =
+          '<div class="frame-art" style="background-image:'+(r.thumb ? 'none' : paletteFor(i))+'">'+ artFor(i, r.thumb) +'</div>'+
+          '<a class="dl" href="'+r.file+'" download aria-label="Download '+r.title+'">'+DL_ICON_WHITE+'</a>'+
+          '<div class="frame-caption">'+
+            '<h4>'+r.title+'</h4>'+
+            '<span class="meta">Grade '+r.grade+' · '+r.meta+'</span>'+
+          '</div>';
+      } else if(r.type === 'audio'){
+        card.className = 'resource-card reveal is-visible';
+        var bars = '';
+        for(var b=0; b<18; b++){ bars += '<span style="height:'+(6+Math.round(Math.sin(b*1.4+i)*8+8))+'px"></span>'; }
+        card.innerHTML =
+          '<span class="kind mono">Audio · Grade '+r.grade+'</span>'+
+          '<h4>'+r.title+'</h4>'+
+          '<div class="waveform">'+bars+'</div>'+
+          '<span class="meta">'+r.meta+'</span>'+
+          '<a class="dl" href="'+r.file+'" download>'+DL_ICON+' Download</a>';
+      } else {
+        card.className = 'resource-card reveal is-visible';
+        card.innerHTML =
+          '<span class="kind mono">PDF · Grade '+r.grade+'</span>'+
+          '<h4>'+r.title+'</h4>'+
+          '<span class="meta">'+r.meta+'</span>'+
+          '<a class="dl" href="'+r.file+'" download>'+DL_ICON+' Download</a>';
+      }
+      grid.appendChild(card);
+    });
+  }
+  renderResources();
+
+  /* ---------------- Scroll reveal ---------------- */
+  var revealTargets = document.querySelectorAll('.section-head, .about-card, .service-list li, .grade-chip, .index-card, .contact-info');
+  revealTargets.forEach(function(el){ el.classList.add('reveal'); });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    revealTargets.forEach(function(el){ io.observe(el); });
+  } else {
+    revealTargets.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------------- Contact form feedback ----------------
+     FormSubmit handles the actual send; this just gives a friendly
+     confirmation instead of a hard page redirect. */
+  var form = document.getElementById('contactForm');
+  var formMsg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    if(form.action.indexOf('YOUR-EMAIL@example.com') !== -1){
+      e.preventDefault();
+      formMsg.textContent = 'Almost there — the academy needs to set a real email address in the form before messages can be sent. Please try again soon.';
+      formMsg.className = 'form-msg show';
+      return;
+    }
+    // Let FormSubmit handle real submissions normally.
+  });
+})();
+</script>
+
+</body>
+</html>

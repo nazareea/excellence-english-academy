@@ -1,0 +1,1283 @@
+/* =========================================================
+   EXCELLENCE ENGLISH ACADEMY
+   QUIZ SYSTEM
+   MODERN RESPONSIVE DESIGN
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef4ff,
+            #f8fbff
+        );
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button,
+select {
+    font-family: "Poppins", sans-serif;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GRADE PAGE
+========================================================= */
+
+.grade_page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.brand_icon {
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(37, 99, 235, .25);
+}
+
+.brand h1 {
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #172033;
+}
+
+.brand p {
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   GRADE CARD
+========================================================= */
+
+.grade_card {
+
+    width: 460px;
+
+    max-width: 100%;
+
+    padding: 38px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(15, 23, 42, .12);
+
+    text-align: center;
+}
+
+.grade_card_icon {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #eef4ff;
+
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+.grade_card h2 {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.grade_description {
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   GRADE SELECT
+========================================================= */
+
+.grade_card label {
+
+    display: block;
+
+    text-align: left;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #475569;
+}
+
+.grade_card select {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 15px;
+
+    border-radius: 12px;
+
+    border: 2px solid #e5eaf1;
+
+    background: #fff;
+
+    color: #172033;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.grade_card select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(37, 99, 235, .10);
+}
+
+
+/* =========================================================
+   START GRADE BUTTON
+========================================================= */
+
+.start_grade_btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, .25);
+
+    transition: .25s;
+}
+
+.start_grade_btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(37, 99, 235, .32);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.academy_footer {
+
+    margin-top: 25px;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(15, 23, 42, .50);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .3s;
+
+    z-index: 5;
+}
+
+body.modal-active::before {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.info_box {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 540px;
+
+    max-width: 92%;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(15, 23, 42, .20);
+
+    transform:
+        translate(-50%, -50%)
+        scale(.9);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .3s;
+
+    z-index: 20;
+
+    overflow: hidden;
+}
+
+.info_box.activeInfo {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+.info-title {
+
+    padding: 22px 28px;
+
+    border-bottom:
+        1px solid #edf1f6;
+}
+
+.info-title span {
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+.info-list {
+
+    padding: 20px 28px;
+}
+
+.info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 14px 0;
+
+    font-size: 14px;
+
+    color: #64748b;
+
+    line-height: 1.5;
+}
+
+.info i {
+
+    width: 22px;
+
+    color: #2563eb;
+}
+
+.info span {
+
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+========================================================= */
+
+.info_box .buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px 28px;
+
+    border-top:
+        1px solid #edf1f6;
+}
+
+
+/* =========================================================
+   COMMON BUTTONS
+========================================================= */
+
+.quit {
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.quit:hover {
+
+    background: #e2e8f0;
+}
+
+.restart {
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.restart:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   QUIZ BOX
+========================================================= */
+
+.quiz_box {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 720px;
+
+    max-width: 94%;
+
+    max-height: 94vh;
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(15, 23, 42, .20);
+
+    transform:
+        translate(-50%, -50%)
+        scale(.9);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .3s;
+
+    z-index: 15;
+}
+
+.quiz_box.activeQuiz {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   QUIZ HEADER
+========================================================= */
+
+.quiz_box header {
+
+    position: relative;
+
+    padding: 20px 25px;
+
+    border-bottom:
+        1px solid #edf1f6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.quiz_header_left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.title {
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+.exam_grade {
+
+    padding: 5px 10px;
+
+    border-radius: 7px;
+
+    background: #eef4ff;
+
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+.timer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    background: #eef4ff;
+
+    border-radius: 9px;
+
+    color: #2563eb;
+}
+
+.time_left_txt {
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.timer_sec {
+
+    min-width: 32px;
+
+    padding: 4px 6px;
+
+    text-align: center;
+
+    border-radius: 6px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TIME LINE
+========================================================= */
+
+.time_line {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #2563eb;
+
+    transition: width .2s linear;
+}
+
+
+/* =========================================================
+   QUIZ SECTION
+========================================================= */
+
+.quiz_box section {
+
+    padding: 28px;
+}
+
+.question_number {
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    padding: 6px 11px;
+
+    border-radius: 7px;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.que_text {
+
+    margin-bottom: 22px;
+}
+
+.que_text p {
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    font-weight: 600;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.option_list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.option {
+
+    min-height: 55px;
+
+    padding: 13px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    border: 2px solid #e5eaf1;
+
+    border-radius: 12px;
+
+    color: #334155;
+
+    background: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.option:hover {
+
+    border-color: #2563eb;
+
+    background: #f5f8ff;
+
+    transform: translateX(3px);
+}
+
+.option.correct {
+
+    border-color: #22c55e;
+
+    background: #ecfdf5;
+
+    color: #15803d;
+}
+
+.option.incorrect {
+
+    border-color: #ef4444;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+.option.disabled {
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.quiz_box footer {
+
+    min-height: 70px;
+
+    padding: 15px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid #edf1f6;
+
+    background: #fbfcfe;
+}
+
+.total_que {
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    font-weight: 600;
+}
+
+.next_btn {
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .25s;
+}
+
+.next_btn.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.next_btn:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESULT BOX
+========================================================= */
+
+.result_box {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 500px;
+
+    max-width: 92%;
+
+    padding: 38px 30px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px
+        rgba(15, 23, 42, .20);
+
+    transform:
+        translate(-50%, -50%)
+        scale(.9);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .3s;
+
+    z-index: 30;
+}
+
+.result_box.activeResult {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+.result_icon {
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef4ff;
+
+    color: #f59e0b;
+
+    font-size: 34px;
+}
+
+.complete_text {
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.result_grade {
+
+    margin-top: 5px;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.score_text {
+
+    margin-top: 18px;
+
+    color: #64748b;
+
+    font-size: 16px;
+}
+
+.result_status {
+
+    margin: 15px auto 25px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.result_status.pass {
+
+    color: #16a34a;
+}
+
+.result_status.fail {
+
+    color: #dc2626;
+}
+
+.result_box .buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .grade_page {
+
+        padding: 20px 15px;
+    }
+
+    .brand h1 {
+
+        font-size: 22px;
+    }
+
+    .brand p {
+
+        font-size: 12px;
+    }
+
+    .brand_icon {
+
+        width: 62px;
+        height: 62px;
+
+        font-size: 25px;
+    }
+
+    .grade_card {
+
+        padding: 28px 22px;
+
+        border-radius: 20px;
+    }
+
+    .grade_card h2 {
+
+        font-size: 20px;
+    }
+
+    .quiz_box {
+
+        width: 95%;
+
+        max-height: 94vh;
+
+        border-radius: 18px;
+    }
+
+    .quiz_box header {
+
+        padding: 16px;
+    }
+
+    .title {
+
+        font-size: 15px;
+    }
+
+    .exam_grade {
+
+        font-size: 10px;
+    }
+
+    .timer {
+
+        padding: 6px;
+    }
+
+    .time_left_txt {
+
+        display: none;
+    }
+
+    .quiz_box section {
+
+        padding: 20px 17px;
+    }
+
+    .que_text p {
+
+        font-size: 17px;
+
+        line-height: 1.55;
+    }
+
+    .option {
+
+        min-height: 50px;
+
+        padding: 11px 12px;
+
+        font-size: 13px;
+    }
+
+    .option:hover {
+
+        transform: none;
+    }
+
+    .quiz_box footer {
+
+        padding: 13px 17px;
+    }
+
+    .total_que {
+
+        font-size: 11px;
+    }
+
+    .next_btn {
+
+        padding: 9px 15px;
+
+        font-size: 12px;
+    }
+
+    .result_box {
+
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+    .complete_text {
+
+        font-size: 19px;
+    }
+
+    .result_box .buttons {
+
+        flex-direction: column;
+    }
+
+    .result_box .buttons button {
+
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .brand h1 {
+
+        font-size: 19px;
+    }
+
+    .grade_card {
+
+        padding: 24px 18px;
+    }
+
+    .que_text p {
+
+        font-size: 15px;
+    }
+
+    .option {
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+select:focus-visible,
+.option:focus-visible {
+
+    outline: 3px solid
+        rgba(37, 99, 235, .25);
+
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   UNIT / LESSON PAGES — added for grade->unit->lesson->video->quiz
+========================================================= */
+
+.page-header {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.page-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.back_link {
+    background: white;
+    border: 2px solid #e5eaf1;
+    color: #475569;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .2s;
+}
+.back_link:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.card_grid {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card_grid .grade_card {
+    width: auto;
+    padding: 26px 20px;
+    cursor: pointer;
+    transition: .2s;
+}
+.card_grid .grade_card:hover:not(.locked-card) {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 80px rgba(15, 23, 42, .16);
+}
+.card_grid .grade_card h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.locked-card {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+.locked-card .grade_card_icon {
+    background: #f1f5f9;
+    color: #94a3b8;
+}
+
+/* =========================================================
+   LESSON DETAIL — video + start quiz
+========================================================= */
+
+.lesson_detail_card {
+    width: 640px;
+    max-width: 100%;
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 25px 70px rgba(15, 23, 42, .12);
+}
+
+.video_wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+.video_wrap video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+}

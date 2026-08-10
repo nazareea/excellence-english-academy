@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Excellence English Academy English Learning System">
+<title>Excellence English Academy | Lessons &amp; Exams</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<!-- =====================================================
+     GRADE SELECTION PAGE
+====================================================== -->
+<div class="grade_page" id="gradePage">
+    <div class="brand">
+        <div class="brand_icon"><i class="fas fa-graduation-cap"></i></div>
+        <h1>Excellence English Academy</h1>
+        <p>English Learning System</p>
+    </div>
+
+    <div class="grade_card">
+        <div class="grade_card_icon"><i class="fas fa-book-open"></i></div>
+        <h2>Select Your Grade</h2>
+        <p class="grade_description">Choose your grade to see its units and lessons.</p>
+        <label for="gradeSelect">Grade</label>
+        <select id="gradeSelect">
+            <option value="">-- Select Grade --</option>
+            <option value="1">Grade 1</option>
+            <option value="2">Grade 2</option>
+            <option value="3">Grade 3</option>
+            <option value="4">Grade 4</option>
+            <option value="5">Grade 5</option>
+            <option value="6">Grade 6</option>
+            <option value="7">Grade 7</option>
+            <option value="8">Grade 8</option>
+            <option value="9">Grade 9</option>
+            <option value="10">Grade 10</option>
+            <option value="11">Grade 11</option>
+        </select>
+        <button class="start_grade_btn" id="startGradeExam">
+            <span>View Units</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div class="academy_footer">Excellence in every lesson</div>
+</div>
+
+<!-- =====================================================
+     UNIT PAGE
+====================================================== -->
+<div class="grade_page" id="unitPage" style="display:none;">
+    <div class="page-header">
+        <button class="back_link" id="backToGradesFromUnits"><i class="fas fa-arrow-left"></i> Grades</button>
+        <h2 id="unitPageTitle">Grade — Units</h2>
+    </div>
+    <div class="card_grid" id="unitGrid"></div>
+</div>
+
+<!-- =====================================================
+     LESSON LIST PAGE
+====================================================== -->
+<div class="grade_page" id="lessonPage" style="display:none;">
+    <div class="page-header">
+        <button class="back_link" id="backToUnitsFromLessons"><i class="fas fa-arrow-left"></i> Units</button>
+        <h2 id="lessonPageTitle">Unit — Lessons</h2>
+    </div>
+    <div class="card_grid" id="lessonGrid"></div>
+</div>
+
+<!-- =====================================================
+     LESSON DETAIL PAGE (VIDEO + START QUIZ)
+====================================================== -->
+<div class="grade_page" id="lessonDetailPage" style="display:none;">
+    <div class="page-header">
+        <button class="back_link" id="backToLessonsFromDetail"><i class="fas fa-arrow-left"></i> Lessons</button>
+        <h2 id="lessonDetailTitle">Lesson</h2>
+    </div>
+    <div class="lesson_detail_card">
+        <div class="video_wrap">
+            <video id="lessonVideo" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+        <button class="start_grade_btn" id="startLessonQuiz">
+            <span>Take Lesson Quiz</span>
+            <i class="fas fa-pen"></i>
+        </button>
+    </div>
+</div>
+
+<!-- =====================================================
+     INFORMATION BOX
+====================================================== -->
+<div class="info_box">
+    <div class="info-title"><span>Exam Instructions</span></div>
+    <div class="info-list">
+        <div class="info"><i class="fas fa-clock"></i> You have <span>15 seconds</span> for each question.</div>
+        <div class="info"><i class="fas fa-check-circle"></i> Once you select an answer, you cannot change it.</div>
+        <div class="info"><i class="fas fa-ban"></i> You cannot select an answer after the time is over.</div>
+        <div class="info"><i class="fas fa-chart-line"></i> Your score is calculated automatically.</div>
+        <div class="info"><i class="fas fa-trophy"></i> You need 70% or more to pass.</div>
+    </div>
+    <div class="buttons">
+        <button class="quit">Exit</button>
+        <button class="restart" id="continueExam">Continue</button>
+    </div>
+</div>
+
+<!-- =====================================================
+     QUIZ BOX
+====================================================== -->
+<div class="quiz_box">
+    <header>
+        <div class="quiz_header_left">
+            <div class="title">Excellence English Academy</div>
+            <div class="exam_grade" id="examGrade">Grade 1</div>
+        </div>
+        <div class="timer">
+            <div class="time_left_txt">Time</div>
+            <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line"></div>
+    </header>
+    <section>
+        <div class="question_number" id="questionNumber">Question 1</div>
+        <div class="que_text"></div>
+        <div class="option_list"></div>
+    </section>
+    <footer>
+        <div class="total_que"></div>
+        <button class="next_btn">Next <i class="fas fa-arrow-right"></i></button>
+    </footer>
+</div>
+
+<!-- =====================================================
+     RESULT BOX
+====================================================== -->
+<div class="result_box">
+    <div class="result_icon"><i class="fas fa-trophy"></i></div>
+    <div class="complete_text">You've completed the quiz!</div>
+    <div class="result_grade" id="resultGrade">Grade 1</div>
+    <div class="score_text"></div>
+    <div class="result_status" id="resultStatus"></div>
+    <div class="buttons">
+        <button class="restart" id="replayExam"><i class="fas fa-redo"></i> Replay</button>
+        <button class="quit" id="backToGrades"><i class="fas fa-arrow-left"></i> Lessons</button>
+    </div>
+</div>
+
+<!-- =====================================================
+     CURRICULUM DATABASE — 11 GRADES x 8 UNITS x 8 LESSONS
+====================================================== -->
+<script src="js/grade1.js"></script>
+<script src="js/grade2.js"></script>
+<script src="js/grade3.js"></script>
+<script src="js/grade4.js"></script>
+<script src="js/grade5.js"></script>
+<script src="js/grade6.js"></script>
+<script src="js/grade7.js"></script>
+<script src="js/grade8.js"></script>
+<script src="js/grade9.js"></script>
+<script src="js/grade10.js"></script>
+<script src="js/grade11.js"></script>
+
+<!-- =====================================================
+     MAIN ENGINE
+====================================================== -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

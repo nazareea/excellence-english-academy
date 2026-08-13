@@ -227,113 +227,14 @@ function renderLessons(gradeData, unit) {
 /* =====================================================
    LESSON DETAIL (VIDEO + START QUIZ)
 ===================================================== */
+
 function renderLessonDetail(gradeData, unit, lesson) {
-
-    lessonDetailTitle.textContent =
-        gradeData.title + " · " +
-        unit.title + " · " +
-        lesson.title;
-
-    const source = lessonVideo.querySelector("source");
-
-    source.src = lesson.video;
-
+    lessonDetailTitle.textContent = gradeData.title + " · " + unit.title + " · " + lesson.title;
+    lessonVideo.querySelector("source").src = lesson.video;
     lessonVideo.load();
-
-    // ---------------------------------------------
-    // RESTORE SAVED VIDEO POSITION
-    // ---------------------------------------------
-
-    lessonVideo.addEventListener("loadedmetadata", function restoreVideoPosition() {
-
-        const savedTime = VideoProgress.load(
-            currentGrade,
-            unit.numb,
-            lesson.numb
-        );
-
-        if (savedTime > 0 && savedTime < lessonVideo.duration) {
-
-            lessonVideo.currentTime = savedTime;
-
-            const minutes = Math.floor(savedTime / 60);
-            const seconds = Math.floor(savedTime % 60)
-                .toString()
-                .padStart(2, "0");
-
-            alert(
-                "📚 Welcome back!\n\n" +
-                "Your video will continue from " +
-                minutes + ":" + seconds
-            );
-        }
-
-        lessonVideo.removeEventListener(
-            "loadedmetadata",
-            restoreVideoPosition
-        );
-
-    }, { once: true });
 }
 
-
-// =====================================================
-// SAVE VIDEO POSITION WHILE WATCHING
-// =====================================================
-
-lessonVideo.addEventListener("timeupdate", function () {
-
-    if (!currentGrade || !currentUnit || !currentLesson) {
-        return;
-    }
-
-    // Don't save when the video is basically finished
-    if (
-        lessonVideo.duration &&
-        lessonVideo.currentTime < lessonVideo.duration - 2
-    ) {
-
-        VideoProgress.save(
-            currentGrade,
-            currentUnit.numb,
-            currentLesson.numb,
-            lessonVideo.currentTime
-        );
-    }
-});
-
-
-
-
-
-
-// =====================================================
-// VIDEO COMPLETED
-// =====================================================
-
-lessonVideo.addEventListener("ended", function () {
-
-    if (!currentGrade || !currentUnit || !currentLesson) {
-        return;
-    }
-
-    // Remove saved position because the lesson is finished
-    VideoProgress.clear(
-        currentGrade,
-        currentUnit.numb,
-        currentLesson.numb
-    );
-
-    console.log(
-        "Video completed:",
-        currentGrade,
-        currentUnit.numb,
-        currentLesson.numb
-    );
-});
-
 startLessonQuiz.addEventListener("click", function () {
-    lessonVideo.pause();
 
     questions = currentLesson.questions;
 
@@ -349,38 +250,6 @@ startLessonQuiz.addEventListener("click", function () {
 });
 
 
-// =====================================================
-// VIDEO PROGRESS — LOCAL STORAGE
-// =====================================================
-
-const VideoProgress = {
-
-    key(grade, unitNumb, lessonNumb) {
-        return `EEA_video_${grade}_u${unitNumb}_l${lessonNumb}`;
-    },
-
-    save(grade, unitNumb, lessonNumb, time) {
-        localStorage.setItem(
-            this.key(grade, unitNumb, lessonNumb),
-            String(time)
-        );
-    },
-
-    load(grade, unitNumb, lessonNumb) {
-        const saved = localStorage.getItem(
-            this.key(grade, unitNumb, lessonNumb)
-        );
-
-        return saved ? parseFloat(saved) : 0;
-    },
-
-    clear(grade, unitNumb, lessonNumb) {
-        localStorage.removeItem(
-            this.key(grade, unitNumb, lessonNumb)
-        );
-    }
-};
-
 /* =====================================================
    BACK BUTTONS
 ===================================================== */
@@ -391,12 +260,9 @@ backToUnitsFromLessons.addEventListener("click", () => {
     showPage(unitPage);
 });
 backToLessonsFromDetail.addEventListener("click", () => {
-    lessonVideo.pause();
     renderLessons(window.curriculum[currentGrade], currentUnit);
     showPage(lessonPage);
-    
 });
-
 
 
 /* =====================================================

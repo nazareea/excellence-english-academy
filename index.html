@@ -11,6 +11,44 @@
 <body>
 
 <!-- =====================================================
+     FIXED HEADER (WebSchool-style)
+====================================================== -->
+<header class="header">
+  <div class="brand">
+    <button class="icon-btn menu-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <i class="fas fa-graduation-cap"></i>
+    <span>Excellence English Academy</span>
+  </div>
+  <button class="icon-btn"><i class="fas fa-user"></i></button>
+</header>
+
+<!-- =====================================================
+     FIXED SIDE NAV
+====================================================== -->
+<aside id="sidenav" class="sidenav">
+  <div>
+    <div class="nav-label">Main</div>
+    <a href="#" class="nav-link active" onclick="goHome(); return false;"><i class="fas fa-gauge"></i> Grades</a>
+    <a href="#" class="nav-link" onclick="return false;"><i class="fas fa-users"></i> Students</a>
+    <a href="#" class="nav-link" onclick="return false;"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+
+  <!-- SOCIAL MEDIA IN NAV -->
+  <div class="social-links">
+    <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+</aside>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay" onclick="closeNav()"></div>
+
+<main class="content">
+
+<!-- =====================================================
      GRADE SELECTION PAGE
 ====================================================== -->
 <div class="grade_page" id="gradePage">
@@ -92,6 +130,8 @@
     </div>
 </div>
 
+</main>
+
 <!-- =====================================================
      INFORMATION BOX
 ====================================================== -->
@@ -170,6 +210,25 @@
      MAIN ENGINE
 ====================================================== -->
 <script src="js/script.js"></script>
+
+<!-- =====================================================
+     SIDE NAV JS (WebSchool-style)
+====================================================== -->
+<script>
+  const sidenav = document.getElementById('sidenav');
+  const overlay = document.getElementById('overlay');
+  let isNavOpen = false;
+
+  function openNav(){ sidenav.classList.add('open'); overlay.classList.add('show'); isNavOpen = true; }
+  function closeNav(){ sidenav.classList.remove('open'); overlay.classList.remove('show'); isNavOpen = false; }
+  function toggleNav(){ isNavOpen ? closeNav() : openNav(); }
+
+  // "Grades" nav link — always takes the student back to grade selection
+  function goHome(){
+    showPage(gradePage);
+    if (window.innerWidth < 1024) closeNav();
+  }
+</script>
 
 </body>
 </html>

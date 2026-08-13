@@ -44,3 +44,13 @@ videos/
 
 Push the whole folder as-is. If using GitHub Pages, set the Pages source to
 the repo root (where `index.html` lives).
+
+
+## Navigation
+
+A fixed header + collapsible side nav (WebSchool-style) sits on top of the
+grade/unit/lesson flow. On mobile it's a hamburger menu with an overlay; on
+desktop (1024px+) it's always open and the content shifts right of it.
+The **Grades** link always takes you back to grade selection. Social links
+in the nav are placeholders — drop your real profile URLs into the `href`
+attributes in `index.html`.
